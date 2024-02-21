@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.left-column, .right-column {
+flex: 1;
+}
+
+.left-column {
+margin-right: 20px;
+}
+.right-column {
+margin-left: 20px; 
+}

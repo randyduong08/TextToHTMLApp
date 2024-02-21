@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import Body from './bodylayout/page'
+import Body from './components/bodylayout'
 
 export default function Home() {
   return (
     <main className="main">
       <h1><b>Text to HTML Generator</b></h1>
-
       <Body />
     </main>
   )
