@@ -10,8 +10,8 @@ export default function Page(){
                 <Logo />
             </div>
             <div className='right-items'>
-                <LoginButton />
                 <RegisterButton />
+                <LoginButton />
             </div>
         </div>
     )

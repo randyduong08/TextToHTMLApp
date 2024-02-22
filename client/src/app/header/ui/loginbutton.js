@@ -1,5 +1,5 @@
 export default function Page(){
     return (
-        <button type="button">Login</button>
+        <a href='/login'>Login</a>
     )
 }
