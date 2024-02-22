@@ -23,21 +23,25 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 1em;
+    max-width: 500px;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
 }
 
 .google {
     background-color: #778899;
-    color: white;
+    color: lightblue;
 }
 
 .microsoft {
     background-color: #778899;
-    color: white;
+    color: lightblue;
 }
 
 .email, .password {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     margin: 10px 0;
     border-radius: 5px;
     border: 1px solid #555;
