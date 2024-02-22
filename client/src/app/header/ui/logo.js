@@ -1,5 +1,5 @@
 export default function Page(){
     return (
-        <a href='/'>TextToHTML</a>
+        <a href='/' class='logo'>TextToHTML</a>
     )
 }

@@ -5,7 +5,7 @@ import Logo from './ui/logo'
 
 export default function Page(){
     return(
-        <div className='container'>
+        <div className='navbar'>
             <div className='left-items'>
                 <Logo />
             </div>
