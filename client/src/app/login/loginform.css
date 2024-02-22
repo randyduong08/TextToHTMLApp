@@ -26,13 +26,13 @@ body {
 }
 
 .google {
-    background-color: #dd4b39;
-    color: white;
+    background-color: #778899;
+    color: lightblue;
 }
 
 .microsoft {
-    background-color: #0066ff;
-    color: white;
+    background-color: #778899;
+    color: lightblue;
 }
 
 .email, .password {
