@@ -8,14 +8,14 @@ textarea {
     width: 100%;
     box-sizing: border-box;
     resize: none;
-    background-color: lightslategray;
+    background-color: #778899;
     border: 2px solid white;
     border-radius: 5px;
     /* Font Configs */
     color:white;
     font-size: 14px;
     font-weight: 400;
-    font-family:'Times New Roman',sans-serif,serif,Times;
+    font-family: Arial, sans-serif;
 }
 /* Padding for 1080p width */
 @media screen and (max-width: 1080px){
