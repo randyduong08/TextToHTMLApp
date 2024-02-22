@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Body from './components/bodylayout'
+import Body from './index/bodylayout'
 
 export default function Home() {
   return (
