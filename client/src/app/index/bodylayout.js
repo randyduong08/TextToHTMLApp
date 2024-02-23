@@ -13,7 +13,6 @@ export default function Page() {
             <div className='left-column'>
                 <h1>Input</h1>
                 <TextInput />
-                <SubmitButton />
                 <FileInput />
                 <SubmitButton />
             </div>
