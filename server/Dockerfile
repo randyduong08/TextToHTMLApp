@@ -1,4 +1,4 @@
-# Python runtime for parent imag 
+# Python runtime for parent image
 FROM python:3.12
 
 # Set Environment variables when needed here
