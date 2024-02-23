@@ -1,10 +1,13 @@
-// FileInput Component
+// FileInput.js
+
+import './fileinput.css';
 
 export default function Page() {
-    return (
-        <div>
-            <h2>Input File</h2>
-            <input type="file" id="myfile" name="myfile"></input>
-        </div>
-    )
+  return (
+    <div className="container">
+      <h1>Submit a text file</h1>
+      {/* Apply the file input styles to this input element */}
+      <input type="file" id="myfile" name="myfile" accept="text/plain" />
+    </div>
+  );
 }
