@@ -1,7 +1,11 @@
-// SubmitButton Component
+// ./src/app/index/ui/SubmitButton.js
+
+import styles from './submitbutton.css';
 
 export default function Page() {
-    return (
-        <button type="button">Submit</button>
-    )
+  return (
+    <div className={styles.container}>
+      <button type="submit" className={styles.submitButton}>Submit</button>
+    </div>
+  );
 }
