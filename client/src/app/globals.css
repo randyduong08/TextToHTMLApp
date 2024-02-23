@@ -13,6 +13,8 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
+  padding-top: 50px; /* Padding to prevent overlap with header */
+  padding-bottom: 50px; /* Padding to prevent overlap with footer */
 } 
 
 /* @tailwind base;
