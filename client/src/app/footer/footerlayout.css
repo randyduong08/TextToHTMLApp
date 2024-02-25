@@ -7,7 +7,6 @@
     height: 150px; /* Look into fixing the header's height/size somehow??? See bottom position*/
     bottom: 0;
     background-color: rgb(201, 225, 228);
-    border-top: 1px solid rgb(104, 159, 199);
 }
 
 .footer-content img{
