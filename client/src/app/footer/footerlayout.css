@@ -1,7 +1,47 @@
 .footer-content{
-    padding: 10px 10px;
     display:flex;
-    align-content: center;
-    justify-content: space-evenly;
-    background-color: rgb(89, 162, 247);
+    justify-content: center;
+    /* align-items: baseline; */
+    position: fixed;
+    width: 100%;
+    height: 150px; /* Look into fixing the header's height/size somehow??? See bottom position*/
+    bottom: 0;
+    background-color: rgb(34,34,34);
+}
+
+.footer-content img{
+    display:block;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    filter:invert(1) /* Turns github logo white*/
+}
+
+
+.contact-info{
+    margin-right: 70%;
+    margin-top: calc(--footer-height/2);
+}
+
+.contact-info ul{
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info h3{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.contact-info li{
+    font-size: 16px;
+}
+
+.github-info h3{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
 }

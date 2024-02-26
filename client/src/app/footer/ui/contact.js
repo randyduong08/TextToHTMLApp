@@ -1,7 +1,13 @@
 export default function Page(){
     return(
         <div className='contact-info'>
-            <h1>We'll put some info here.</h1>
+            <h3>Members</h3>
+            <ul>
+                <li>Randy Duong</li>
+                <li>Riley O'Keefe</li>
+                <li>Giavi Tran</li>
+                <li>Jonathan Truong</li>
+            </ul>
         </div>
     )
 }
