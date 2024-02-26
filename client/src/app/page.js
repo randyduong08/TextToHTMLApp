@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Body from './index/bodylayout'
+import Header from './header/headerlayout'
 
 export default function Home() {
   return (
