@@ -1,12 +1,12 @@
 .footer-content{
     display:flex;
     justify-content: center;
-    align-items: baseline;
+    /* align-items: baseline; */
     position: fixed;
     width: 100%;
     height: 150px; /* Look into fixing the header's height/size somehow??? See bottom position*/
     bottom: 0;
-    background-color: rgb(201, 225, 228);
+    background-color: rgb(34,34,34);
 }
 
 .footer-content img{
@@ -15,13 +15,14 @@
     height: 50px;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    filter:invert(1) /* Turns github logo white*/
 }
 
 
 .contact-info{
-    /* background-color: blueviolet; */
     margin-right: 70%;
-    margin-bottom: 1%;
+    margin-top: calc(--footer-height/2);
 }
 
 .contact-info ul{
@@ -29,13 +30,11 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 0;
     margin: 0;
-    color: black;
 }
 
 .contact-info h3{
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
-    color:black;
 }
 
 .contact-info li{
@@ -45,5 +44,4 @@
 .github-info h3{
     font-size: 24px;
     font-family: Arial, Helvetica, sans-serif;
-    color:black;
 }
