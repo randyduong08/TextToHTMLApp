@@ -1,0 +1,31 @@
+.container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+textarea {
+    /* Text Area Configs */
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    background-color: #778899;
+    border: 2px solid white;
+    border-radius: 5px;
+    /* Font Configs */
+    color:white;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Arial, sans-serif;
+}
+/* Padding for 1080p width */
+@media screen and (max-width: 1080px){
+    .content{
+        padding: 10px;
+    }
+}
+/* Padding for 2160p width */
+@media screen and (max-width: 2160px){
+    .content{
+        padding: 5px;
+    }
+}
