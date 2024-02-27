@@ -1,1 +1,5 @@
 4990env/
+
+# Ignore .pyc files in __pycache__ directories
+__pycache__/
+*.pyc
