@@ -5,6 +5,7 @@ from django.db import models
 
 # Model for the User table in the database
 class User(models.Model):
+    id = models.AutoField(primary_key=True)
     userName = models.CharField(max_length=255, unique=True)
     userEmail = models.EmailField(unique=True)
     userPassword = models.CharField(max_length=255)
@@ -12,6 +13,7 @@ class User(models.Model):
 
 # Model for the Prompt table in the database
 class Prompt(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    id = models.AutoField(primary_key=True)
+    userID = models.ForeignKey(User, on_delete=models.CASCADE)
     prompt = models.TextField()
     creationTime = models.DateTimeField(auto_now_add=True)
