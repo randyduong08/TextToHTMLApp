@@ -1,5 +1,5 @@
 from rest_framework import serializers
-
+from serverapp.models import User
 from serverapp.models import Prompt
 
 # serializers to convert JSON data to Python native objects
