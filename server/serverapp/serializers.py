@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from serverapp.models import User
-from serverapp.models import Prompt
+from serverapp.models import User, Prompt
 
 # serializers to convert JSON data to Python native objects
 
@@ -8,11 +7,11 @@ from serverapp.models import Prompt
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['userID', 'userName', 'userEmail', 'userPassword', 'registrationDate']
+        fields = ['id', 'userName', 'userEmail', 'userPassword', 'registrationDate']
         extra_kwargs = {'userPassword': {'write_only': True}}  # It's better to handle passwords securely
 
 # for Prompt data
 class PromptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prompt
-        fields = ['promptID', 'userID', 'prompt', 'creationTime']
+        fields = ['id', 'userID', 'prompt', 'creationTime']
