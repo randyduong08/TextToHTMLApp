@@ -12,12 +12,12 @@ export default function InputForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/prompt_submit/', {
+            const response = await fetch('http://localhost:8000/prompts/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ userID: '0', prompt: prompt }), // set userID to 0 TEMPORARILY
+                body: JSON.stringify({ prompt, userID: 0 }), // set userID to 0 TEMPORARILY
             });
             if (response.ok) {
                 console.log('Prompt stored successfully');
