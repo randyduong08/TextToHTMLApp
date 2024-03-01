@@ -1,5 +1,5 @@
 body {
-    color:white;
+    color:21, 22, 26;
     font-size: 14px;
     font-weight: 400;
     font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@ body {
   }
 
 .container {
-    background: #222;
+    background: 21, 22, 26;
     padding: 20px;
     border-radius: 5px;
 }

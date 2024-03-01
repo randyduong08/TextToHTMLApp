@@ -5,7 +5,7 @@ import Header from './header/headerlayout'
 export default function Home() {
   return (
     <main className="main">
-      <h1><b>Text to HTML Generator</b></h1>
+
       <Body />
     </main>
   )

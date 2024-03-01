@@ -41,7 +41,7 @@ export default function InputForm() {
                     placeholder="Enter description of website to generate:"
                 />
                 <br></br>
-                <button type="submit">Submit</button>
+                <button type="submit" className="submitButton">Submit</button>
             </form>
         </div>
     )

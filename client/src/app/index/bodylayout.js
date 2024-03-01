@@ -11,13 +11,13 @@ export default function Page() {
     return (
         <div className='container'>
             <div className='left-column'>
-                <h1>Input</h1>
+                <h1></h1>
                 <TextInput />
                 <FileInput />
                 <SubmitButton />
             </div>
             <div className='right-column'>
-                <h1>Output</h1>
+                <h1></h1>
                 <HTMLPreview />
                 <FileOutput />
             </div>

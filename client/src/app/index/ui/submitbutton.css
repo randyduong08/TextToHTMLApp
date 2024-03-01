@@ -1,18 +1,14 @@
-/* styles.module.css */
-
-/* Override default button styles */
 button.submitButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff; /* Background color */
-    color: #fff; /* Text color */
-    border: 2px solid #007bff;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button.submitButton:hover {
-    background-color: #0056b3; /* Change background color on hover */
-  }
-  
+  padding: 10px 20px;
+  margin-top: 10px;
+  font-size: 16px;
+  background-color: #9054fc; /* Background color */
+  color: white; /* Text color */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.submitButton:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

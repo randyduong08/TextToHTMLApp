@@ -15,9 +15,12 @@ input[type="file"] {
     border: 2px solid #cccccc;
     border-radius: 1px;
     font-size: 12px;
-    background-color: #778899;
-    color: rgb(255, 255, 255);
+    font-weight: bold !important;
+    background-color: #15161a;
+    color: #9054fc;
     cursor: pointer;
+    margin:top 10px;
+    margin:bottom 10px;
   }
   .fileInputLabel {
     font-size: 12px;

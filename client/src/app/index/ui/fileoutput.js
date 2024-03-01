@@ -5,7 +5,8 @@ export default function Page() {
         <div>
             <h2>Download Generated HTML File</h2>
             <a href="/sampleoutput.html" download="sampleoutput.html">
-                <button>Download Sample Output</button>
+            <button type="submit" className="submitButton">Download Output</button>
+
             </a>
         </div>
     )
