@@ -7,11 +7,11 @@ from serverapp.models import User, Prompt
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'userName', 'userEmail', 'userPassword', 'registrationDate']
+        fields = ['userID', 'userName', 'userEmail', 'userPassword', 'registrationDate']
         extra_kwargs = {'userPassword': {'write_only': True}}  # It's better to handle passwords securely
 
 # for Prompt data
 class PromptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prompt
-        fields = ['id', 'userID', 'prompt', 'creationTime']
+        fields = ['promptID', 'userID', 'promptDetails', 'creationTime']

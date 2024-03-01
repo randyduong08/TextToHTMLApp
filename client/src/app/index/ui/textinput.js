@@ -6,8 +6,8 @@
 import { useState } from 'react';
 
 export default function InputForm() {
-    // prompt = state variable; setPrompt = setter function, '' = initial value of prompt
-    const [prompt, setPrompt] = useState('');
+    // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
+    const [promptDetails, setPromptDetails] = useState('');
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,15 +17,15 @@ export default function InputForm() {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ prompt, userID: 0 }), // set userID to 0 TEMPORARILY
+                body: JSON.stringify({ promptDetails, userID: 0 }), // set userID to 0 TEMPORARILY
             });
             if (response.ok) {
-                console.log('Prompt stored successfully');
+                console.log('Prompt details stored successfully');
             } else {
-                console.log('Error storing prompt');
+                console.log('Error storing prompt details');
             }
             const data = await response.json();
-            console.log('Prompt saved:', data);
+            console.log('Prompt details saved:', data);
         } catch (error) {
             console.error('Error:', error);
         }
@@ -36,8 +36,8 @@ export default function InputForm() {
             <h2>Input Text</h2>
             <form onSubmit={handleSubmit}>
                 <textarea 
-                    value={prompt}
-                    onChange={(e) => setPrompt(e.target.value)}
+                    value={promptDetails}
+                    onChange={(e) => setPromptDetails(e.target.value)}
                     placeholder="Enter description of website to generate:"
                 />
                 <br></br>
