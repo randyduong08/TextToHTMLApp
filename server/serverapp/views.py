@@ -11,8 +11,8 @@ from serverapp.serializers import UserSerializer, PromptSerializer
 # NOTE: View functions are functions that take a request and return a response; "request handlers"
 class PromptView(APIView):
     def get(self, request):
-        prompts = Prompt.objects.all()
-        serializer = PromptSerializer(prompts, many=True)
+        prompt = Prompt.objects.all()
+        serializer = PromptSerializer(prompt, many=True)
         return Response(serializer.data)
 
     def post(self, request):
