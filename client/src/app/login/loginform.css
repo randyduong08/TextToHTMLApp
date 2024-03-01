@@ -1,18 +1,25 @@
+/* Update the placeholder color */
+.email::placeholder,
+.password::placeholder {
+    color: white;
+}
+
+/* Rest of your CSS styles remain the same */
 body {
-    color:white;
+    color: white;
     font-size: 14px;
     font-weight: 400;
     font-family: Arial, sans-serif;
-    background-color: #333;
+    background-color: #15161a;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
+}
 
 .container {
-    background: #222;
+    background: #15161a;
     padding: 20px;
     border-radius: 5px;
 }
@@ -20,41 +27,44 @@ body {
 .button {
     display: block;
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     margin: 10px 0;
     border: none;
     border-radius: 5px;
     font-size: 1em;
     max-width: 500px;
-    overflow: hidden; 
-    text-overflow: ellipsis; 
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
-    background-color: #778899;
+    background-color: #9054fc;
 }
 
 .google {
-    background-color: #778899;
-    color: lightblue;
+    background-color: #9054fc;
+    color: white;
 }
 
 .microsoft {
-    background-color: #778899;
-    color: lightblue;
+    background-color: #9054fc;
+    color: white;
 }
 
-.email, .password {
+
+.email,
+.password {
     width: 100%;
-    padding: 5px;
+    padding: 8px; /* Adjust padding to match button padding */
     margin: 10px 0;
     border-radius: 5px;
-    border: 1px solid #555;
-    background-color: #778899;
-    color: lightblue;
+    border: none; /* Remove border to match button style */
+    background-color: #9054fc;
+    color: white;
 }
 
+
 .sso {
-    background-color: #778899;
-    color: lightblue;
+    background-color: #9054fc;
+    color: white;
 }
 
 .login {
