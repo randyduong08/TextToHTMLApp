@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     # third-party apps
     'corsheaders',
-    'rest_framework',
 
     # our backend app
     'serverapp',
