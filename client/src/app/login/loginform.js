@@ -5,10 +5,10 @@ export default function LoginForm(){
         <div className="container">
             <h2 className="flex items-center justify-center">Login to TextToHTML</h2>
             <button className="button google">
-            <img src="Google Login Icon.png" alt="Google Login Icon" width="5%" height="5%"/>Log in with Google
+                <img src="Google Login Icon.png" alt="Google Login Icon" width="5%" height="5%"/>Log in with Google
             </button>
             <button className="button microsoft">
-            <img src="Windows Login Icon.png" alt="Windows Login Icon" width="5%" height="5%"/>Log in with Microsoft
+                <img src="Windows Login Icon.png" alt="Windows Login Icon" width="5%" height="5%"/>Log in with Microsoft
             </button>
             <p className="flex items-center justify-center">or</p>
             <form>

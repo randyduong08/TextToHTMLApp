@@ -5,7 +5,6 @@ import Header from './header/headerlayout'
 export default function Home() {
   return (
     <main className="main">
-
       <Body />
     </main>
   )

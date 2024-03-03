@@ -5,10 +5,11 @@
     padding: 0;
     margin: 0;
     position: fixed;
-    width: 100%;
+    width: calc(100% - 90px); /* Adjusted width to account for the spacing */
     min-height: 50px;
     top: 0;
     background-color:#15161a;
+    padding-right: 100px; /* Added padding to the right */
 }
 
 .navbar a {
@@ -29,6 +30,7 @@
 .right-items a:hover{
     color: rgb(0, 0, 0);
 }
+
 button.submitButton {
     padding: 10px 20px;
     margin-top: 10px;
@@ -38,8 +40,8 @@ button.submitButton {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  button.submitButton:hover {
+}
+
+button.submitButton:hover {
     background-color: #0056b3; /* Change background color on hover */
-  }
+}

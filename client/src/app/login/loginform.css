@@ -49,7 +49,6 @@ body {
     color: white;
 }
 
-
 .email,
 .password {
     width: 100%;
@@ -61,7 +60,6 @@ body {
     color: white;
 }
 
-
 .sso {
     background-color: #9054fc;
     color: white;
@@ -71,4 +69,9 @@ body {
     text-align: center;
     margin-top: 20px;
     color: white;
+}
+
+/* Remove the footer */
+.footer {
+    display: none;
 }
