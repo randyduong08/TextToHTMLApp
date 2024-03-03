@@ -75,3 +75,22 @@ body {
 .footer {
     display: none;
 }
+.header-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #15161a;
+    padding: 10px 20px;
+    z-index: 999; /* Ensure the header stays above other content */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #15161a;
+    padding: 10px 20px;
+    z-index: 999;
+    /* Add any other styles for your navbar */
+}

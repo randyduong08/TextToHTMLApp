@@ -22,6 +22,8 @@ body {
     background: #15161a;
     padding: 20px;
     border-radius: 5px;
+    max-width: 500px; /* Added max-width to match button */
+    margin: 0 auto; /* Center the container horizontally */
 }
 
 .button {
@@ -71,4 +73,24 @@ body {
     text-align: center;
     margin-top: 20px;
     color: white;
+}
+/* Fixed header styles */
+.header-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #15161a;
+    padding: 10px 20px;
+    z-index: 999; /* Ensure the header stays above other content */
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #15161a;
+    padding: 10px 20px;
+    z-index: 999;
+    /* Add any other styles for your navbar */
 }
