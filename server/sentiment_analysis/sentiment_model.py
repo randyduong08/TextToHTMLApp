@@ -70,7 +70,7 @@ class SentimentModel():
         final_token_ids: list[int] = final_inputs["input_ids"]
         
         # create attention_masks for each sequence (1 = valid token, 0 = padded token)
-        attention_masks: list[int] = [int(token_id >0) for token_id in final_token_ids]
+        attention_masks: list[int] = [int(token_id > 0) for token_id in final_token_ids]
         
         return final_token_ids, attention_masks
     
