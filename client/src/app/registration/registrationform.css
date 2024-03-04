@@ -1,7 +1,43 @@
 /* Update the placeholder color */
 .email::placeholder,
+.name::placeholder,
 .password::placeholder {
     color: white;
+}
+
+/* Reset default padding and border for input elements */
+.email,
+.name,
+.password {
+    width: 100%;
+    padding: 8px; /* Adjust padding to match button padding */
+    margin: 10px 0;
+    border-radius: 5px;
+    border: white; /* Remove border to match button style */
+    border: 1px solid white;
+    background-color: transparent;
+    color: white;
+    position: relative; /* Ensure email and password fields are positioned above buttons */
+    z-index: 2; /* Set z-index to a higher value to position them above buttons */
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    position: relative; /* Set position relative for button elements */
+}
+
+.button,
+.google,
+.microsoft,
+.sso,
+.login {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: #9054fc;
+    color: white;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+    position: relative; /* Set position relative for button elements */
+    z-index: 1; /* Set z-index to a lower value to position them below email and password fields */
 }
 
 /* Rest of your CSS styles remain the same */
@@ -20,70 +56,20 @@ body {
 
 .container {
     background: #15161a;
-    padding: 20px;
-    border-radius: 5px;
+    padding: 20px; /* Adjusted padding to create the "card" effect */
+    border-radius: 10px; /* Increased border-radius for rounded corners */
     max-width: 500px; /* Added max-width to match button */
-    margin: 0 auto; /* Center the container horizontally */
+    margin: 10px 0; /* Adjusted margin to match button */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow for depth effect */
+    border: 2px solid white; /* Added border with white color */
 }
 
-.button {
-    display: block;
-    width: 100%;
-    padding: 8px;
-    margin: 10px 0;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    max-width: 500px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    background-color: #9054fc;
+/* Remove the footer */
+.footer {
+    display: none;
 }
 
-.google {
-    background-color: #9054fc;
-    color: white;
-}
-
-.microsoft {
-    background-color: #9054fc;
-    color: white;
-}
-
-
-.email,
-.password {
-    width: 100%;
-    padding: 8px; /* Adjust padding to match button padding */
-    margin: 10px 0;
-    border-radius: 5px;
-    border: none; /* Remove border to match button style */
-    background-color: #9054fc;
-    color: white;
-}
-
-
-.sso {
-    background-color: #9054fc;
-    color: white;
-}
-
-.login {
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-}
-/* Fixed header styles */
-.header-layout {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #15161a;
-    padding: 10px 20px;
-    z-index: 999; /* Ensure the header stays above other content */
-}
+.header-layout,
 .navbar {
     position: fixed;
     top: 0;
@@ -91,6 +77,5 @@ body {
     width: 100%;
     background-color: #15161a;
     padding: 10px 20px;
-    z-index: 999;
-    /* Add any other styles for your navbar */
+    z-index: 999; /* Ensure the header stays above other content */
 }
