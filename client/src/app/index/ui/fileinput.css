@@ -21,8 +21,8 @@ input[type="file"] {
   cursor: pointer;
   margin-top: 10px;
   margin-bottom: 10px;
-  position: absolute; /* Add this line */
-  bottom: 0; /* Add this line */
+  position: absolute; 
+  bottom: 0; 
 }
 
 .fileInputLabel {
