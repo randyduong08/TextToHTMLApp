@@ -4,6 +4,7 @@
 'use client'    // React only works on client components, so need to specify this is a client component
 
 import { useState } from 'react';
+import { toast } from 'react-toastify'
 
 export default function InputForm() {
     // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
@@ -21,13 +22,17 @@ export default function InputForm() {
             });
             if (response.ok) {
                 console.log('Prompt details stored successfully');
+                const showToast = () => toast('Prompt details stored successfully');
             } else {
                 console.log('Error storing prompt details');
+                const showToast = () => toast('Error storing prompt details');
             }
             const data = await response.json();
             console.log('Prompt details saved:', data);
+            const showToast = () => toast('Prompt details saved:', data);
         } catch (error) {
             console.error('Error:', error);
+            const showToast = () => toast('Error:', error);
         }
     };
 
