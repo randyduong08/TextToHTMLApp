@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import Body from './index/bodylayout'
 import Header from './header/headerlayout'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Home() {
   return (
     <main className="main">
       <h1><b>Text to HTML Generator</b></h1>
       <Body />
+      <ToastContainer />
     </main>
   )
 
