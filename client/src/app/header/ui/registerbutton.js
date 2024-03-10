@@ -1,5 +1,5 @@
-export default function Page(){
+export default function Page() {
     return (
-        <a href='/registration'>Register</a>
-    )
+        <button type="submit" className="submitButton">Register</button>
+    );
 }

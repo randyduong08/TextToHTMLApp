@@ -1,7 +1,8 @@
 // FileInput.js
 
 import './fileinput.css';
-
+import React from 'react'
+import { useDrag } from 'react-dnd'
 export default function Page() {
   return (
     <div className="container">

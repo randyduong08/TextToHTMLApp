@@ -1,26 +1,32 @@
-/* fileinput.css */
 .container {
-    /* Add styles for the container here */
-    /* For example: */
-    padding: 2px;
-  }
-  /* Header styles */
+  /* Add styles for the container here */
+  padding: 2px;
+  position: relative; /* Add this line */
+}
+
+/* Header styles */
 .container h1 {
-    font-size: 24px; 
-  }
-  
+  font-size: 24px;
+}
+
 /* Apply styles only to input elements with type="file" */
 input[type="file"] {
-    padding: 10px;
-    border: 2px solid #cccccc;
-    border-radius: 1px;
-    font-size: 12px;
-    background-color: #778899;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-  }
-  .fileInputLabel {
-    font-size: 12px;
-    color: white;
-    margin-bottom: 10px;
+  padding: 10px;
+  border: 2px solid #cccccc;
+  border-radius: 1px;
+  font-size: 12px;
+  font-weight: bold !important;
+  background-color: #15161a;
+  color: #9054fc;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  position: absolute; 
+  bottom: 0; 
+}
+
+.fileInputLabel {
+  font-size: 12px;
+  color: white;
+  margin-bottom: 10px;
 }
