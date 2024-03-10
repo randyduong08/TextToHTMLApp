@@ -1,5 +1,6 @@
 import './registrationform.css';
 import Header from '../header/headerlayout';
+import { Checkbox } from "@/components/ui/checkbox"
 
 export default function RegistrationForm() {
     return (
@@ -20,6 +21,9 @@ export default function RegistrationForm() {
             </button>
             <div className="register">
                 <p>Don't have an account? <a href="/registration">Register</a></p>
+                <div className="mt-2"> {/* Add margin top from the checkbox */}
+                    <Checkbox/> Accept Terms and Conditions
+                </div>
             </div>
         </div>
     );
