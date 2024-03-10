@@ -10,10 +10,12 @@ export default function InputForm() {
     // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
     const [promptDetails, setPromptDetails] = useState('');
 
+    // define toast messages
     const showToastStoreSuccess = () => toast('Prompt details stored successfully');
     const showToastStoreFail = () => toast('Error storing prompt details');
     const showToastError = (error) => toast('Error:', error);
 
+    // function that handles submission from the html form defined below
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
