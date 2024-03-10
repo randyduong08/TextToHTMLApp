@@ -1,1 +1,8 @@
 4990env/
+
+# Ignore .pyc files in __pycache__ directories
+__pycache__/
+*.pyc
+
+# Ignore pre_trained file which holds the configs and weights for tokenizers and models
+pre_trained/

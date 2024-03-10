@@ -4,32 +4,41 @@
 'use client'    // React only works on client components, so need to specify this is a client component
 
 import { useState } from 'react';
+import { toast } from 'react-toastify'
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { Terminal } from "lucide-react"
 
 export default function InputForm() {
-    // prompt = state variable; setPrompt = setter function, '' = initial value of prompt
-    const [prompt, setPrompt] = useState('');
+    // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
+    const [promptDetails, setPromptDetails] = useState('');
 
+    // define toast messages
+    const showToastStoreSuccess = () => toast('Prompt details stored successfully');
+    const showToastStoreFail = () => toast('Error storing prompt details');
+    const showToastError = (error) => toast('Error:', error);
+
+    // function that handles submission from the html form defined below
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:8000/prompt_submit/', {
+            const response = await fetch('http://localhost:8000/prompts/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ userID: '0', prompt: prompt }), // set userID to 0 TEMPORARILY
+                body: JSON.stringify({ promptDetails, userID: 0 }), // set userID to 0 TEMPORARILY
             });
             if (response.ok) {
-                console.log('Prompt stored successfully');
+                console.log('Prompt details stored successfully');
+                showToastStoreSuccess();
             } else {
-                console.log('Error storing prompt');
+                console.log('Error storing prompt details');
+                showToastStoreFail();
             }
-            const data = await response.json();
-            console.log('Prompt saved:', data);
+
         } catch (error) {
             console.error('Error:', error);
+            showToastError(error);
         }
     };
 
@@ -45,8 +54,8 @@ export default function InputForm() {
             <h2>Input Text</h2>
             <form onSubmit={handleSubmit}>
                 <textarea 
-                    value={prompt}
-                    onChange={(e) => setPrompt(e.target.value)}
+                    value={promptDetails}
+                    onChange={(e) => setPromptDetails(e.target.value)}
                     placeholder="Enter description of website to generate:"
                 />
                 <br></br>

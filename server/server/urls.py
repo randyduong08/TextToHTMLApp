@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from serverapp.views import PromptView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('prompts/', PromptView.as_view(), name='prompts'),
 ]
