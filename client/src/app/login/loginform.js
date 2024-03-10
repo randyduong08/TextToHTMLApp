@@ -12,9 +12,11 @@ export default function LoginForm() {
                 <input type="password" placeholder="Password" className="password" />
                 <button type="submit" className="button email">Register using your email</button>
             </form>
+            <div className="flex justify-center">
             <button className="button google">
                 <img src="Google Login Icon.png" alt="Google Login Icon" width="5%" height="5%" />Login with Google
             </button>
+            </div>
             <button className="button microsoft">
                 <img src="Windows Login Icon.png" alt="Windows Login Icon" width="5%" height="5%" />Login with Microsoft
             </button>

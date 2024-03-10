@@ -28,6 +28,8 @@
 .microsoft,
 .sso,
 .login {
+    justify-content: center;
+    justify-items: center;
     width: 100%;
     padding: 8px;
     margin: 10px 0;
