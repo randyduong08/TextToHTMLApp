@@ -4,6 +4,8 @@
 'use client'    // React only works on client components, so need to specify this is a client component
 
 import { useState } from 'react';
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Terminal } from "lucide-react"
 
 export default function InputForm() {
     // prompt = state variable; setPrompt = setter function, '' = initial value of prompt
@@ -33,6 +35,13 @@ export default function InputForm() {
 
     return (
         <div>
+            <Alert>
+  <Terminal className="h-4 w-4" />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components and dependencies to your app using the cli.
+  </AlertDescription>
+</Alert>
             <h2>Input Text</h2>
             <form onSubmit={handleSubmit}>
                 <textarea 
