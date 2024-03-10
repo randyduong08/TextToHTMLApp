@@ -1,6 +1,6 @@
 button.submitButton {
-  padding: 10px 20px;
-  margin-top: 10px;
+  padding:auto;
+  margin: auto;
   font-size: 16px;
   background-color: #9054fc; /* Background color */
   color: white; /* Text color */
