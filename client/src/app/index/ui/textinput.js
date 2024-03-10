@@ -10,6 +10,11 @@ export default function InputForm() {
     // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
     const [promptDetails, setPromptDetails] = useState('');
 
+    const showToastStoreSuccess = () => toast('Prompt details stored successfully');
+    const showToastStoreFail = () => toast('Error storing prompt details');
+    const showToastDetailsSaved = (data) => toast('Prompt details saved:', data);
+    const showToastError = (error) => toast('Error:', error);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
@@ -22,17 +27,17 @@ export default function InputForm() {
             });
             if (response.ok) {
                 console.log('Prompt details stored successfully');
-                const showToast = () => toast('Prompt details stored successfully');
+                showToastStoreSuccess();
             } else {
                 console.log('Error storing prompt details');
-                const showToast = () => toast('Error storing prompt details');
+                showToastStoreFail();
             }
             const data = await response.json();
             console.log('Prompt details saved:', data);
-            const showToast = () => toast('Prompt details saved:', data);
+            showToastDetailsSaved(data);
         } catch (error) {
             console.error('Error:', error);
-            const showToast = () => toast('Error:', error);
+            showToastError(error);
         }
     };
 
