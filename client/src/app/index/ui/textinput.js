@@ -12,7 +12,6 @@ export default function InputForm() {
 
     const showToastStoreSuccess = () => toast('Prompt details stored successfully');
     const showToastStoreFail = () => toast('Error storing prompt details');
-    const showToastDetailsSaved = (data) => toast('Prompt details saved:', data);
     const showToastError = (error) => toast('Error:', error);
 
     const handleSubmit = async (e) => {
@@ -32,9 +31,7 @@ export default function InputForm() {
                 console.log('Error storing prompt details');
                 showToastStoreFail();
             }
-            const data = await response.json();
-            console.log('Prompt details saved:', data);
-            showToastDetailsSaved(data);
+
         } catch (error) {
             console.error('Error:', error);
             showToastError(error);
