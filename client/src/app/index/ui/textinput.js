@@ -5,6 +5,8 @@
 
 import { useState } from 'react';
 import { toast } from 'react-toastify'
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { Terminal } from "lucide-react"
 
 export default function InputForm() {
     // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
@@ -42,6 +44,13 @@ export default function InputForm() {
 
     return (
         <div>
+            <Alert>
+  <Terminal className="h-4 w-4" />
+  <AlertTitle>Heads up!</AlertTitle>
+  <AlertDescription>
+    You can add components and dependencies to your app using the cli.
+  </AlertDescription>
+</Alert>
             <h2>Input Text</h2>
             <form onSubmit={handleSubmit}>
                 <textarea 
@@ -50,7 +59,7 @@ export default function InputForm() {
                     placeholder="Enter description of website to generate:"
                 />
                 <br></br>
-                <button type="submit">Submit</button>
+                <button type="submit" className="submitButton">Submit</button>
             </form>
         </div>
     )
