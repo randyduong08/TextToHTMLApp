@@ -13,28 +13,39 @@ textarea {
     min-height: 200px !important;
     max-height: 600px !important;
     box-sizing: border-box;
-    resize:both !important;
+    resize: both !important;
     background-color: #15161a;
     border: 2px solid white;
     border-radius: 5px;
     /* Font Configs */
-    color:white;
+    color: white;
     font-size: 14px;
     font-weight: 400;
     font-family: Arial, sans-serif;
 }
 
+/* Adjusted styling for buttons */
+button.submitButton {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0; /* Add margin to create separation */
+    border-radius: 5px;
+    border: none;
+    background-color: #9054fc;
+    color: white;
+    box-sizing: border-box;
+}
 
 /* Padding for 1080p width */
-@media screen and (max-width: 1080px){
-    .content{
-        padding: 10px;
+@media screen and (max-width: 1080px) {
+    .content {
+        padding: 20px;
     }
 }
 
 /* Padding for 2160p width */
-@media screen and (max-width: 2160px){
-    .content{
-        padding: 5px;
+@media screen and (max-width: 2160px) {
+    .content {
+        padding: 15px;
     }
 }

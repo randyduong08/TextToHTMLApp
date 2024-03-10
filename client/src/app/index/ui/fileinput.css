@@ -11,7 +11,7 @@
 
 /* Apply styles only to input elements with type="file" */
 input[type="file"] {
-  padding: 10px;
+  padding: auto;
   border: 2px solid #cccccc;
   border-radius: 1px;
   font-size: 12px;
