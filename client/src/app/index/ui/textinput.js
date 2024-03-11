@@ -36,7 +36,7 @@ export default function InputForm() {
             <h2>Enter a prompt</h2>
             <form onSubmit={handleSubmit}>
                 <textarea 
-                    class="resize w-96 h-96"
+                    className="resize w-full h-96" // Adjusted width and height
                     value={prompt}
                     onChange={(e) => setPrompt(e.target.value)}
                     placeholder="Enter description of website to generate:"
@@ -46,4 +46,4 @@ export default function InputForm() {
             </form>
         </div>
     )
-}   
+}
