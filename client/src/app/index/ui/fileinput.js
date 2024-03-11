@@ -1,15 +1,31 @@
 // FileInput.js
-
+'use client'
 import './fileinput.css';
-import React from 'react';
-import { useDrag } from 'react-dnd';
+import React, { useState } from "react";
+import { FileUploader } from "react-drag-drop-files";
 
-export default function Page() {
+const fileTypes = ["txt"]; // Only allow txt files
+
+function DragDrop() {
+  const [file, setFile] = useState(null);
+  
+  const handleChange = (file) => {
+    setFile(file);
+  };
+
   return (
-    <div className="container">
-      <h1 className="mt-4">Submit a text file</h1> {/* Added mt-4 class for margin-top */}
-      {/* Apply the file input styles to this input element */}
-      <input type="file" id="myfile" name="myfile" accept="text/plain" />
+    <div style={{ marginTop: '10px' }}> {/* Add margin top to the div containing the FileUploader */}
+      <FileUploader
+        handleChange={handleChange}
+        name="file"
+        types={fileTypes}
+        label="Click, or Drag and Drop a text file!"
+        labelStyle={{ color: 'white' }} // Apply white color to the label text
+        maxSize={5} // Maximum file size allowed in MB
+        onDrop={(file) => console.log("File dropped:", file)}
+      />
     </div>
   );
 }
+
+export default DragDrop;
