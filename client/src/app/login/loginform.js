@@ -11,7 +11,7 @@ export default function LoginForm() {
                 <input type="email" placeholder="Email" className="email" />
                 <input type="name" placeholder="Name" className="name" />
                 <input type="password" placeholder="Password" className="password" />
-                <button type="submit" className="button email">Register using your email</button>
+                <button type="submit" className="button email">Login using your email</button>
             </form>
             <div className="flex justify-center">
                 <button className="button google">

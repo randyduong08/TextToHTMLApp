@@ -13,6 +13,7 @@ export default function RegistrationForm() {
                 <input type="password" placeholder="Password" className="password" />
                 <button type="submit" className="button email">Register using your email</button>
             </form>
+            
             <button className="button google">
                 <img src="Google Login Icon.png" alt="Google Login Icon" width="5%" height="5%" />Register with Google
             </button>
@@ -20,7 +21,7 @@ export default function RegistrationForm() {
                 <img src="Windows Login Icon.png" alt="Windows Login Icon" width="5%" height="5%" />Register with Microsoft
             </button>
             <div className="register">
-                <p>Don't have an account? <a href="/registration">Register</a></p>
+                <p>Already have an account? <a href="/login">Login</a></p>
                 <div className="mt-2"> {/* Add margin top from the checkbox */}
                     <Checkbox/> Accept Terms and Conditions
                 </div>
