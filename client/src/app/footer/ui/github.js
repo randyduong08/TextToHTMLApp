@@ -1,6 +1,6 @@
 export default function Page() {
     return (
-        <div className="mr-40 pr-40 absolute bottom-0 right-40"> {/* Apply margin to the outside of the card */}
+        <div className="mr-40 pr-40 absolute bottom-10 right-40"> {/* Apply margin to the outside of the card */}
             <div className="bg-transparent border border-white shadow-md rounded-lg p-6 text-white">
                 <h3 className="text-lg font-semibold mb-4">GitHub</h3>
                 <div className="flex items-center gap-4">
