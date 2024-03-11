@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from serverapp.models import User, Prompt
 from serverapp.serializers import UserSerializer, PromptSerializer
+from serverapp.data_processing import delimit_prompt_details
 
 # Create your views here.
 # NOTE: Views in Django are "Request Handlers", not to be confused with front-end views
@@ -19,5 +20,7 @@ class PromptView(APIView):
         serializer = PromptSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            tokens_array = delimit_prompt_details(serializer.data)              # parse the tokens from the prompt details
+            return Response(data=tokens_array, status=status.HTTP_201_CREATED)  # return these tokens
+            #return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
