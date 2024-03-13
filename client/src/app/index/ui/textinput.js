@@ -35,15 +35,16 @@ export default function InputForm() {
         <div>
             <h2>Enter a prompt</h2>
             <form onSubmit={handleSubmit}>
-                <textarea 
-                    class="resize w-96 h-96"
-                    value={prompt}
-                    onChange={(e) => setPrompt(e.target.value)}
-                    placeholder="Enter description of website to generate:"
-                />
-                <br></br>
+            <textarea 
+    className="resize h-96"
+    style={{ width: "36rem" }}
+    value={prompt}
+    onChange={(e) => setPrompt(e.target.value)}
+    placeholder="Enter description of website to generate:"
+/>
+                <br />
                 <button type="submit" className="submitButton">Submit</button>
             </form>
         </div>
     )
-}   
+}

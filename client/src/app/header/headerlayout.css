@@ -37,23 +37,7 @@
     font-size: 16px; /* Adjusted font size */
     color: white;
     transition: color 0.5s; /* Added transition for color change */
-}
-.navbar a:hover {
-    color: #0056b3; /* Change color on hover */
-}
-
-.right-items {
-    display: flex;
-    column-gap: 20px;
-}
-
-.right-items a {
-    padding: 10px;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Adjusted font size */
-    color: white;
-    transition: color 0.5s; /* Added transition for color change */
+    display:flex;
 }
 
 button.submitButton {
