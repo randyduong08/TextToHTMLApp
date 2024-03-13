@@ -72,8 +72,9 @@ function DragDrop() {
                 handleChange={handleChange}
                 name="file"
                 types={fileTypes}
-                label="Click or Drag and Drop a .txt file!"
                 labelStyle={{ color: 'white' }} // Apply white color to the label text
+
+                label="Click or Drag and Drop a .txt file!"
                 maxSize={5} // Maximum file size allowed in MB
                 onDrop={(file) => console.log("File dropped:", file)}
             />

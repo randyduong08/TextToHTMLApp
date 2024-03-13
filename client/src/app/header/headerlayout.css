@@ -5,15 +5,16 @@
     padding: auto;
     margin: auto;
     position: fixed;
-    width: calc(100% - 175px); /* Adjusted width to account for the spacing */
+    width: calc(100% - 10px); /* Adjusted width to account for the spacing */
     min-height: 50px;
     top: 0;
-    background-color:#15161a;
-    padding-right: 100px; /* Added padding to the right */
+    background-color:#111114;
+
 }
 
 .navbar a {
     padding: 0px;
+    margin-left: 10px;
     margin-right: 20px;
     text-decoration: none;
     text-align: center;

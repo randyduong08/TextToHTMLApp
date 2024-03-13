@@ -11,9 +11,10 @@ export default function RegistrationForm() {
                 <input type="name" placeholder="Name" className="name" />
                 <input type="password" placeholder="Password" className="password" />
                 <button type="submit" className="button email flex items-center justify-center p-2 mt-5">
-    <span className="inline-block mr-2">Register using your email</span>
-
+    <img src="email_logo.png" alt="email logo" className="w-5 h-5% mr-2" />
+    <span className="inline-block">Register using your email</span>
 </button>
+
 <button className="button google flex items-center justify-center p-2 mt-5">
     <img src="Google Login Icon.png" alt="Google Login Icon" width="5%" height="5%" />
     <span className="inline-block ml-2">Register with Google</span>
