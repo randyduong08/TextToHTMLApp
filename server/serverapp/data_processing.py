@@ -23,6 +23,7 @@ def get_prompt_by_id(prompt_data, prompt_id):
             return prompt                       # return the prompt (is a dictionary)             
     return None                                 # if (somehow) no prompt with id=prompt_id is found
 
+# Test functionality below
 # # fetch prompts from the database using Prompt model
 # prompts = Prompt.objects.all()
 
