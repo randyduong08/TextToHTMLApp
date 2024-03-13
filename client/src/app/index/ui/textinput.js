@@ -11,12 +11,12 @@ export default function InputForm() {
     const [promptDetails, setPromptDetails] = useState('');
 
     // define toast messages for user visibility
-    const showToastStoreSuccess = (response) => toast('Prompt details stored successfully', response);
-    const showToastStoreFail = () => toast('Error storing prompt details');
-    const showToastError = (error) => toast('Error: ' + error);
+    const showToastStoreSuccess = (response) => toast.success('Prompt details stored successfully', response);
+    const showToastStoreFail = () => toast.error('Error storing prompt details');
+    const showToastError = (error) => toast.error('Error: ' + error);
     const showToastData = (data) => {
         const stringData = '[' + data.join(']; [') + ']';
-        toast('Tokens: \n' + stringData);
+        toast.info('Tokens: \n' + stringData);
     }
 
     // function that handles submission from the html form defined below

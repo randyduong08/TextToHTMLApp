@@ -18,7 +18,6 @@ export default function Page() {
                 <h1></h1>
                 <TextInput />
                 <FileInput />
-                <SubmitButton />
             </div>
             <div className='right-column'>
                 <h1></h1>
