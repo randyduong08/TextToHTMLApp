@@ -11,20 +11,21 @@ import Header from '../header/headerlayout';
 
 export default function Page() {
     return (
-        <div className='container'>
-            <Footer />
+        <div>
             <Header />
-            <div className='left-column'>
-                <h1></h1>
-                <TextInput />
-                <FileInput />
+            <div className='container'>
+                <div className='left-column'>
+                    <h1></h1>
+                    <TextInput />
+                    <FileInput />
+                </div>
+                <div className='right-column'>
+                    <h1></h1>
+                    <HTMLPreview />
+                    <FileOutput />
+                </div>
             </div>
-            <div className='right-column'>
-                <h1></h1>
-                <HTMLPreview />
-                <FileOutput />
-
-            </div>
+            <Footer />
         </div>
     )
 }
