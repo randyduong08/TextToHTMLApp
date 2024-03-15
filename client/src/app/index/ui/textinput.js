@@ -4,7 +4,7 @@
 'use client'    // React only works on client components, so need to specify this is a client component
 
 import { useState } from 'react';
-import { toast } from 'react-toastify'
+import { toast } from 'react-toastify';
 
 export default function InputForm() {
     // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
@@ -54,14 +54,15 @@ export default function InputForm() {
             <h2>Input Text</h2>
             <form onSubmit={handleSubmit}>
                 <textarea 
-                    className="resize w-full h-96" // Adjusted width and height
+                    className="resize h-96 text-black"
+                    style={{ width: "36rem" }}
                     value={promptDetails}
                     onChange={(e) => setPromptDetails(e.target.value)}
                     placeholder={"Enter description of website to generate.\nSeparate tokens with two new-line characters.\n\nExample:\n\nThis is the first portion of my website.\n\nThis is the second portion of my website.\n\nThis is the third portion of my website.\n\n..."}
                 />
-                <br></br>
+                <br />
                 <button type="submit" className="submitButton">Submit</button>
             </form>
         </div>
     )
-}   
+}

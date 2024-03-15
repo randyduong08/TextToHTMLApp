@@ -5,22 +5,28 @@
     padding: auto;
     margin: auto;
     position: fixed;
-    width: calc(100% - 200px); /* Adjusted width to account for the spacing */
+    width: calc(100% - 10px); /* Adjusted width to account for the spacing */
     min-height: 50px;
     top: 0;
-    background-color:#15161a;
-    padding-right: 100px; /* Added padding to the right */
+    background-color:#111114;
+
 }
 
 .navbar a {
     padding: 0px;
+    margin-left: 10px;
+    margin-right: 20px;
     text-decoration: none;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
+    font-size: 36px;
     color:white;
     transition: 0.5s;
 }
+
+.navbar a:first-child {
+    margin-left: right; /* Pushes the first link to the left */
+}
 .navbar a:hover {
     color: #0056b3; /* Change color on hover */
 }
@@ -37,23 +43,7 @@
     font-size: 16px; /* Adjusted font size */
     color: white;
     transition: color 0.5s; /* Added transition for color change */
-}
-.navbar a:hover {
-    color: #0056b3; /* Change color on hover */
-}
-
-.right-items {
-    display: flex;
-    column-gap: 20px;
-}
-
-.right-items a {
-    padding: 10px;
-    text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px; /* Adjusted font size */
-    color: white;
-    transition: color 0.5s; /* Added transition for color change */
+    display:flex;
 }
 
 button.submitButton {
@@ -69,4 +59,7 @@ button.submitButton {
 
 button.submitButton:hover {
     background-color: #0056b3; /* Change background color on hover */
+}
+.logo {
+    margin-right: auto; /* Pushes the text to the left */
 }
