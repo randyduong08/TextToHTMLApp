@@ -6,3 +6,6 @@ __pycache__/
 
 # Ignore pre_trained file which holds the configs and weights for tokenizers and models
 pre_trained/
+
+# Ignore safetensors files -- the large files that contains the weights for saved models (currently only one safetensor file, for genre_model)
+*.safetensors

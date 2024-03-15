@@ -11,7 +11,7 @@ export default function InputForm() {
     const [promptDetails, setPromptDetails] = useState('');
 
     // define toast messages for user visibility
-    const showToastStoreSuccess = () => toast.success('Prompt details stored successfully');
+    const showToastStoreSuccess = (response) => toast.success('Prompt details stored successfully', response);
     const showToastStoreFail = () => toast.error('Error storing prompt details');
     const showToastError = (error) => toast.error('Error: ' + error);
     const showToastData = (data) => {
@@ -51,16 +51,15 @@ export default function InputForm() {
 
     return (
         <div>
-            <h2>Enter a prompt</h2>
+            <h2>Input Text</h2>
             <form onSubmit={handleSubmit}>
-            <textarea 
-    className="resize h-96 text-black"
-    style={{ width: "36rem" }}
-    value={promptDetails}
-    onChange={(e) => setPromptDetails(e.target.value)}
-    placeholder="Enter description of website to generate:"
-/>
-
+                <textarea 
+                    className="resize h-96 text-black"
+                    style={{ width: "36rem" }}
+                    value={promptDetails}
+                    onChange={(e) => setPromptDetails(e.target.value)}
+                    placeholder={"Enter description of website to generate.\nSeparate tokens with two new-line characters.\n\nExample:\n\nThis is the first portion of my website.\n\nThis is the second portion of my website.\n\nThis is the third portion of my website.\n\n..."}
+                />
                 <br />
                 <button type="submit" className="submitButton">Submit</button>
             </form>
