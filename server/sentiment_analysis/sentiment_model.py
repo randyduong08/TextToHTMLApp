@@ -22,7 +22,7 @@ class SentimentModel():
         self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
         
         # define tokenizer and model to be used
-        self.checkpoint = "siebert/sentiment-roberta-large-english"
+        self.checkpoint = "../custom_models/sentiment_model"
         
         self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint)
         
@@ -111,8 +111,9 @@ class SentimentModel():
 
 
     def save_models(self) -> None:
-        self.tokenizer.save_pretrained("pre_trained/") 
-        self.sentiment_model.save_pretrained("pre_trained/")       
+        model_path = "../custom_models/sentiment_model"
+        self.tokenizer.save_pretrained(model_path) 
+        self.sentiment_model.save_pretrained(model_path)       
 
 
 # function containing example of how you would get a sentiment for an inputted string
@@ -128,7 +129,6 @@ def main() -> None:
     
     model.save_models()
     
-    pass
     
 
 if __name__ == "__main__":
