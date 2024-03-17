@@ -1,0 +1,12 @@
+{% comment %} 
+NOTE: This template does not incorporate any themes (ex. Sports, Gaming, News, Education) 
+{% endcomment %}
+
+<html>
+    <body>
+        <h1> {{ title }} </h1>
+        {% for paragraph in paragraphs %}
+            <p> {{ paragraph }} </p>
+        {% endfor %}
+    </body>
+</html>
