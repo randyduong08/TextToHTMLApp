@@ -67,19 +67,19 @@ function DragDrop() {
 
 
     return (
-        <div style={{ marginTop: '10px' }}> {/* Add margin top to the div containing the FileUploader */}
+        <div style={{ marginTop: '10px' }}>
+            <h2 className="">Input Text File</h2>
             <FileUploader
                 handleChange={handleChange}
                 name="file"
                 types={fileTypes}
                 label="Click or Drag and Drop a .txt file!"
-                labelStyle={{ color: 'white' }} // Apply white color to the label text
-                maxSize={5} // Maximum file size allowed in MB
+                labelStyle={{ color: 'white' }}
+                maxSize={5}
                 onDrop={(file) => console.log("File dropped:", file)}
             />
             <button type="submit" className="submitButton" onClick={handleSubmit}>Submit</button>
         </div>
     );
-}
-
+}    
 export default DragDrop;
