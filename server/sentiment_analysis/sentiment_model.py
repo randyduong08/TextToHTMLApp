@@ -9,7 +9,7 @@ from transformers.modeling_outputs import SequenceClassifierOutput
 
 class SentimentModel():
     
-    
+    _instance = None
     device: Literal["cuda:0", "cpu"]
     checkpoint: str
     tokenizer: Any
@@ -18,11 +18,22 @@ class SentimentModel():
     MAX_LENGTH: int = 510
     
     
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(SentimentModel, cls).__new__(cls)
+            cls._instance._initialized = False
+        
+        return cls._instance
+    
+    
     def __init__(self) -> None:
+        if self._initialized:
+            return
+        
         self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
         
         # define tokenizer and model to be used
-        self.checkpoint = "../custom_models/sentiment_model"
+        self.checkpoint = "custom_models/sentiment_model"
         
         self.tokenizer = AutoTokenizer.from_pretrained(self.checkpoint)
         
@@ -34,6 +45,8 @@ class SentimentModel():
             nltk.download('stopwords')
         
         self.stop_words = set(stopwords.words('english'))
+        self._initialized = True
+        
         
         
         """
@@ -113,7 +126,17 @@ class SentimentModel():
     def save_models(self) -> None:
         model_path = "../custom_models/sentiment_model"
         self.tokenizer.save_pretrained(model_path) 
-        self.sentiment_model.save_pretrained(model_path)       
+        self.sentiment_model.save_pretrained(model_path)
+        
+    
+    def predict(self, sequence: str) -> str:
+        inputs, masks = self.custom_tokenize(sequence)
+        
+        output = self.run_model(inputs, masks)
+        
+        sentiment_label = self.process_output(output)
+        
+        return sentiment_label       
 
 
 # function containing example of how you would get a sentiment for an inputted string
