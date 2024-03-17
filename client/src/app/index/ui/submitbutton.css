@@ -1,7 +1,8 @@
 button.submitButton {
   padding:auto;
   margin: auto;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight:400;
   background-color: #9054fc; /* Background color */
   color: white; /* Text color */
   border-radius: 5px;

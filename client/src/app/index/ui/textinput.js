@@ -51,10 +51,10 @@ export default function InputForm() {
 
     return (
         <div>
-            <h2>Input Text</h2>
+            <h2 className="mt-4 font-bold text-2xl">Input Text</h2>
             <form onSubmit={handleSubmit}>
                 <textarea 
-                    className="resize h-96 text-black"
+                    className="resize h-96 text-white bg-transparent border-2 border-white rounded p-2 font-bold text-xl"
                     style={{ width: "36rem" }}
                     value={promptDetails}
                     onChange={(e) => setPromptDetails(e.target.value)}
