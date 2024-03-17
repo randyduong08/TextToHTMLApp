@@ -14,8 +14,8 @@ input[type="file"] {
   padding: auto;
   border: 2px solid #cccccc;
   border-radius: 1px;
-  font-size: 12px;
-  font-weight: bold !important;
+  font-size: 14px;
+  font-weight: 400!important;
   background-color: #15161a;
   color: #9054fc;
   cursor: pointer;
@@ -23,6 +23,7 @@ input[type="file"] {
   margin-bottom: 10px;
   position: absolute; 
   bottom: 0; 
+  
 }
 
 .fileInputLabel {
