@@ -2,8 +2,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: auto;
-    margin: auto;
     position: fixed;
     width: calc(100%); /* Adjusted width to account for the spacing */
     min-height: 50px;
@@ -13,7 +11,7 @@
 }
 
 .navbar a {
-    padding: 0px;
+    padding: auto;
     margin-left: 10px;
     margin-right: 20px;
     text-decoration: none;
@@ -62,5 +60,6 @@ button.submitButton:hover {
     background-color: #0056b3; /* Change background color on hover */
 }
 .logo {
+    margin-left:10px;
     margin-right: auto; /* Pushes the text to the left */
 }
