@@ -1,12 +1,44 @@
 {% comment %} 
 NOTE: This template incorporates a news theme
+    - Black, dark-grey, and white theme (Black title, white text background, light-grey background)
+    - Sophisticated title in the centre
+    - Centered header and text
 {% endcomment %}
 
 <html>
+    <head>
+        <style>
+            body {
+                background-color: #e6e6e6;
+                font-family: "Times New Roman", Times, serif;
+            }
+            h1 {
+                color: black;
+                text-align: center;
+            }
+            .content {
+                background-color: #f0f7fe;
+                margin: 0 auto;
+                padding: 20px;
+                width: 80%;
+            }
+            h2 {
+                color: black;
+                text-align: center;
+            }
+            p {
+                color: black;
+                text-align: center;
+            }
+        </style>
+    </head>
     <body>
-        <h1> {{ title }} </h1>
-        {% for paragraph in paragraphs %}
-            <p> {{ paragraph }} </p>
-        {% endfor %}
+        <h1><b> {{ title }} </b></h1>
+        <div class="content"> 
+            <h2> {{ header }} </h2>
+            {% for paragraph in paragraphs %}
+                <p> {{ paragraph }} </p>
+            {% endfor %}
+        </div>
     </body>
 </html>

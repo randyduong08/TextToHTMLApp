@@ -1,12 +1,45 @@
 {% comment %} 
 NOTE: This template incorporates a gaming theme
+    - Green and dark-grey theme (Green title, dark-grey text background, dark-dark-grey background)
+    - Sleek (gamer-esque) title at the top-left
+    - Centered header and text
 {% endcomment %}
 
 <html>
+    <head>
+        <style>
+            body {
+                background-color: #1a1a1a;
+                color: #d9d9d9;
+                font-family: "Lucida Console", monospace;
+            }
+            h1 {
+                color: #00ff00;
+                text-align: left;
+                margin-left: 20px;
+            }
+            .content {
+                text-align: center;
+                margin-top: 20px;
+            }
+            h2 {
+                color: #00ff00;
+            }
+            p {
+                background-color: #333333;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 10px;
+            }
+        </style>
+    </head>
     <body>
         <h1> {{ title }} </h1>
-        {% for paragraph in paragraphs %}
-            <p> {{ paragraph }} </p>
-        {% endfor %}
+        <div class="content"> 
+            <h2> {{ header }} </h2>
+            {% for paragraph in paragraphs %}
+                <p> {{ paragraph }} </p>
+            {% endfor %}
+        </div>
     </body>
 </html>
