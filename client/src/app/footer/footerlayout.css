@@ -19,7 +19,7 @@
     /* align-items: baseline; */
     position: fixed;
     width: 100%;
-    height: 200px; /* Look into fixing the header's height/size somehow??? See bottom position*/
+    height: 210px; /* Look into fixing the header's height/size somehow??? See bottom position*/
     bottom: 0;
     background-color: #111114;
 }
