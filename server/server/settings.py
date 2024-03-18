@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 from pathlib import Path
 import os
 
+from datetime import timedelta
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,9 +28,11 @@ SECRET_KEY = 'django-insecure-dj&9litbow7de-o6y9h%yg-8n4nums)a)fvwq#)8@dxe!5fg+z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
-
+SITE_ID = 1; #SITE_ID used for allauth, change to domain when deploying to production?
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = "none"
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,10 +45,24 @@ INSTALLED_APPS = [
 
     # third-party apps
     'corsheaders',
+    'rest_framework',
+    'rest_framework.authtoken',
+    "rest_framework_simplejwt",
 
     # our backend app
     'serverapp',
-    'rest_framework',
+    
+    # user authentication app
+    'authentication', #"authentication.apps.AuthenticationConfig",
+    "allauth",
+    "allauth.account",
+    "allauth.socialaccount",  # add if you want social authentication
+    "allauth.socialaccount.providers.google",
+    "dj_rest_auth",
+    "dj_rest_auth.registration",
+    
+    #sites framework for allauth
+    'django.contrib.sites'
 ]
 
 MIDDLEWARE = [
@@ -60,9 +78,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+        "http://0.0.0.0:3000",
+    ]
 
 ROOT_URLCONF = 'server.urls'
 
@@ -142,3 +165,44 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#settings for authentication JWT
+SIMPLE_JWT = { 
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
+    "ROTATE_REFRESH_TOKENS": False,
+    "BLACKLIST_AFTER_ROTATION": False,
+    "UPDATE_LAST_LOGIN": True,
+    "SIGNING_KEY": "complexsigningkey",  # generate a key and replace me
+    "ALGORITHM": "HS512",
+}
+
+#changes default DRF authentication class
+REST_FRAMEWORK = { 
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ]
+}
+
+REST_AUTH = {
+    "USE_JWT": True,
+    "JWT_AUTH_HTTPONLY": False,
+}
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "APP": {
+            "client_id": "441211114618-4pv3cdfhmao0bcm36qauifer69u4qfth.apps.googleusercontent.com",
+            "secret": "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",
+            "key": "",                               # leave empty
+        },
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+        "VERIFIED_EMAIL": True,
+    },
+}
