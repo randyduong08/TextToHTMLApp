@@ -49,9 +49,9 @@ function DragDrop() {
                     const tokens_array = data.tokens_array;
                     const html_content = data.html_content;
                     console.log('Prompt details stored successfully');
-                    console.log(tokensArray)
+                    console.log(tokens_array)
                     showToastStoreSuccess();
-                    showToastData(tokensArray);
+                    showToastData(tokens_array);
                 } 
                 else {
                     console.log('Error storing prompt details');
