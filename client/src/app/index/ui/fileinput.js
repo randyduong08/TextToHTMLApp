@@ -1,9 +1,12 @@
 // FileInput.js
+
 'use client'
+
 import './fileinput.css';
 import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import { toast } from 'react-toastify'
+import { useHtmlContent } from '../../context/HtmlContentContext';
 
 const fileTypes = ["txt"]; // Only allow txt files
 
@@ -22,6 +25,8 @@ function DragDrop() {
         const stringData = '[' + data.join(']; [') + ']';
         toast.info('Tokens: \n' + stringData);
     }
+    
+    const { setHtmlContent } = useHtmlContent();    // get the setHtmlContent function from the context
 
     // function that handles submission from the html div defined below
     const handleSubmit = async (e) => {
@@ -50,8 +55,11 @@ function DragDrop() {
                     const html_content = data.html_content;
                     console.log('Prompt details stored successfully');
                     console.log(tokens_array)
+                    console.log('File Text:', fileText);
                     showToastStoreSuccess();
                     showToastData(tokens_array);
+
+                    setHtmlContent(html_content);   // update the context with the generated html content
                 } 
                 else {
                     console.log('Error storing prompt details');

@@ -5,6 +5,7 @@
 
 import { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useHtmlContent } from '../../context/HtmlContentContext';
 
 export default function InputForm() {
     // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
@@ -15,9 +16,12 @@ export default function InputForm() {
     const showToastStoreFail = () => toast.error('Error storing prompt details');
     const showToastError = (error) => toast.error('Error: ' + error);
     const showToastData = (data) => {
-        const stringData = '[' + data.join(']; [') + ']';
+        //const stringData = '[' + data.join(']; [') + ']';
+        const stringData = data;
         toast.info('Tokens: \n' + stringData);
     }
+
+    const { setHtmlContent } = useHtmlContent();    // get the setHtmlContent function from the context
 
     // function that handles submission from the html form defined below
     const handleSubmit = async (e) => {
@@ -38,6 +42,8 @@ export default function InputForm() {
                 console.log(tokens_array)
                 showToastStoreSuccess();
                 showToastData(tokens_array);
+
+                setHtmlContent(html_content);   // update the context with the generated html content
             } 
             else {
                 console.log('Error storing prompt details');
