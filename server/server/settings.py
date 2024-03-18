@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-dj&9litbow7de-o6y9h%yg-8n4nums)a)fvwq#)8@dxe!5fg+z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
 
 SITE_ID = 1; #SITE_ID used for allauth, change to domain when deploying to production?
 ACCOUNT_EMAIL_REQUIRED = False
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",  # add if you want social authentication
+    "allauth.socialaccount.providers.google",
     "dj_rest_auth",
     "dj_rest_auth.registration",
     
@@ -80,8 +81,8 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
     CORS_ALLOWED_ORIGINS = [
-        "http://localhost:3000/",
-        "http://127.0.0.1:3000/",
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
         "http://0.0.0.0:3000",
     ]
 
@@ -185,4 +186,22 @@ REST_FRAMEWORK = {
 REST_AUTH = {
     "USE_JWT": True,
     "JWT_AUTH_HTTPONLY": False,
+}
+
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        "APP": {
+            "client_id": "441211114618-4pv3cdfhmao0bcm36qauifer69u4qfth.apps.googleusercontent.com",
+            "secret": "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",
+            "key": "",                               # leave empty
+        },
+        "SCOPE": [
+            "profile",
+            "email",
+        ],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+        "VERIFIED_EMAIL": True,
+    },
 }

@@ -1,4 +1,5 @@
 import './registrationform.css';
+import RegistrationFormDetails from './ui/registrationdetails'
 
 export default function RegistrationForm(){
     return(
@@ -11,11 +12,7 @@ export default function RegistrationForm(){
             <img src="Windows Login Icon.png" alt="Windows Login Icon" width="5%" height="5%"/>Register with Microsoft
             </button>
             <p className="flex items-center justify-center">or</p>
-            <form>
-                <input type="email" placeholder="Email" className="email" />
-                <input type="password" placeholder="Password" className="password" />
-                <button type="submit" className="button email">Register using your email</button>
-            </form>
+            <RegistrationFormDetails/>
             <p className="flex items-center justify-center">or</p>
             <button className="button sso">Log in with SSO</button>
             <div className="login">

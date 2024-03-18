@@ -1,6 +1,7 @@
 import { Inter } from 'next/font/google'
 import Header from './header/headerlayout'
 import Footer from './footer/footerlayout'
+import {SessionProvider} from "next-auth/react";
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -10,14 +11,16 @@ export const metadata = {
   description: 'Generate HTML code from user input!',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({session, children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <SessionProvider session={session}>
+      <html lang="en">
+        <body className={inter.className}>
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </SessionProvider>
   )
 }
