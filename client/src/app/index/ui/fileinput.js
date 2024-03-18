@@ -75,7 +75,6 @@ function DragDrop() {
         fileReader.readAsText(file);        // read the file as text
     };
 
-
     return (
         <div style={{ marginTop: '10px' }}>
             <h2 className="font-bold text-2xl">Input Text File</h2>
