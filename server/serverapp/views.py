@@ -40,6 +40,9 @@ class PromptView(APIView):
                 'paragraphs': paragraphs
             })
 
+            print(tokens_array)
+            print(html_content)
+
             response_data = {                                                   # encapsulate data in JSON object
                 'html_content': html_content,
                 'tokens_array': tokens_array,
