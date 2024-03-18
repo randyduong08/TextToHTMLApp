@@ -8,6 +8,11 @@ def delimit_prompt_details(prompt_data, prompt_id = -1):    # prompt_data = list
     if prompt_id == -1:                                     # if prompt_id is not given, assume prompt_data is only 1 dictionary
         prompt_details = prompt_data['promptDetails']       # get the prompt details from the prompt
         tokens = prompt_details.split("\n\n")                 # split the prompt details into tokens
+        if len(tokens) == 1:                                # if there is only 1 token
+            tokens.append("")                                  # add 2 empty tokens
+            tokens.append("") 
+        elif len(tokens) == 2:                              # if there are only 2 tokens
+            tokens.append("")                                  # add 1 empty token   
         return tokens
     else:                                                   # if prompt_id is given, assume prompt_data is a list of dictionaries
         prompt = get_prompt_by_id(prompt_data, prompt_id)   # get the prompt with the given prompt_id

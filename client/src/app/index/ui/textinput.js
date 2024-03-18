@@ -32,10 +32,12 @@ export default function InputForm() {
             });
             if (response.ok) {
                 const data = await response.json();
+                const tokens_array = data.tokens_array;
+                const html_content = data.html_content;
                 console.log('Prompt details stored successfully');
-                console.log(data)
+                console.log(tokens_array)
                 showToastStoreSuccess();
-                showToastData(data);
+                showToastData(tokens_array);
             } 
             else {
                 console.log('Error storing prompt details');
