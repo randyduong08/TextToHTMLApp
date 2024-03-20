@@ -6,40 +6,62 @@ NOTE: This template incorporates a gaming theme
 {% endcomment %}
 
 <html>
-    <head>
-        <style>
-            body {
-                background-color: #1a1a1a;
-                color: #d9d9d9;
-                font-family: "Lucida Console", monospace;
-            }
-            h1 {
-                color: #00ff00;
-                text-align: left;
-                margin-left: 20px;
-            }
-            .content {
-                text-align: center;
-                margin-top: 20px;
-            }
-            h2 {
-                color: #00ff00;
-            }
-            p {
-                background-color: #333333;
-                padding: 10px;
-                border-radius: 10px;
-                margin: 10px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1> {{ title }} </h1>
-        <div class="content"> 
-            <h2> {{ header }} </h2>
-            {% for paragraph in paragraphs %}
-                <p> {{ paragraph }} </p>
-            {% endfor %}
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-color: #0d0d0d; /* Deep black for a gaming atmosphere */
+            color: #d9d9d9; /* Light grey text for contrast */
+            font-family: "Lucida Console", Monaco, monospace; /* Monospace for a techy, gaming vibe */
+            margin: 0;
+            padding: 0;
+            background-image: url('your_background_image_url_here'); /* Optional: Background image related to gaming */
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .header {
+            color: #00ff00; /* Neon green for titles, reminiscent of gaming consoles */
+            padding: 20px;
+            font-size: 3em;
+            border-bottom: 2px solid #00ff00; /* Neon green underline for emphasis */
+        }
+        .content {
+            background-color: #1a1a1a; /* Slightly lighter black for content background */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 255, 0, 0.2); /* Neon glow effect */
+            width: 80%; /* Adjusted width */
+            max-width: 960px; /* Maximum width */
+            text-align: center;
+        }
+        .content p {
+            text-align: left;
+        }
+        h1, h2 {
+            color: #00ff00; /* Consistent neon green for headings */
+        }
+        p {
+            background-color: #333333; /* Dark grey for paragraphs */
+            color: #d9d9d9; /* Light grey text for readability */
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px auto; /* Center paragraphs */
+            width: 80%; /* Match content width */
+            box-shadow: 0 2px 4px rgba(0, 255, 0, 0.2); /* Subtle neon glow */
+        }
+        /* Additional styling for links, buttons, and other elements can be added here */
+    </style>
+</head>
+<body>
+    <div class="header">{{ title }}</div>
+    <div class="content"> 
+        <h2>{{ header }}</h2>
+        {% for paragraph in paragraphs %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
+    </div>
+</body>
 </html>

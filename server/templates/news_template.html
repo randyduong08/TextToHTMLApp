@@ -6,39 +6,61 @@ NOTE: This template incorporates a news theme
 {% endcomment %}
 
 <html>
-    <head>
-        <style>
-            body {
-                background-color: #e6e6e6;
-                font-family: "Times New Roman", Times, serif;
-            }
-            h1 {
-                color: black;
-                text-align: center;
-            }
-            .content {
-                background-color: #f0f7fe;
-                margin: 0 auto;
-                padding: 20px;
-                width: 80%;
-            }
-            h2 {
-                color: black;
-                text-align: center;
-            }
-            p {
-                color: black;
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <h1><b> {{ title }} </b></h1>
-        <div class="content"> 
-            <h2> {{ header }} </h2>
-            {% for paragraph in paragraphs %}
-                <p> {{ paragraph }} </p>
-            {% endfor %}
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light grey background for a clean, modern feel */
+            color: #333; /* Dark grey text for contrast and readability */
+            font-family: "Merriweather", "Times New Roman", Times, serif; /* Merriweather is a good alternative for news websites */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff; /* Pure white background for header */
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #cccccc; /* Subtle border for a clean separation */
+            border-top: 1px solid #cccccc;
+            font-size: 1.5em;
+        }
+        .header h1 {
+            margin: 0; /* Remove default margins for cleaner spacing */
+            color: #333; /* Consistent text color with the body */
+        }
+        .content {
+            background-color: #ffffff; /* White background for content to stand out */
+            margin: 20px auto;
+            padding: 20px;
+            width: 60%; /* More narrow content width for easier reading */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+        h1, h2 {
+            color: #333; /* Dark grey for headings */
+        }
+        h2 {
+            margin-top: 20px; /* Add space above headers */
+            border-bottom: 2px solid #cccccc; /* Subtle line under headings for structure */
+            padding-bottom: 10px;
+        }
+        p {
+            color: #666; /* Lighter grey for paragraph text */
+            text-align: justify; /* Justified text for a more formal presentation */
+            line-height: 1.6; /* Improved line spacing for readability */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ title }}</h1>
+    </div>
+    <div class="content"> 
+        <h2>{{ header }}</h2>
+        {% for paragraph in paragraphs %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
+    </div>
+</body>
 </html>
