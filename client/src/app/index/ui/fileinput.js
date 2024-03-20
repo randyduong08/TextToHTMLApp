@@ -12,6 +12,7 @@ const fileTypes = ["txt"]; // Only allow txt files
 
 function DragDrop() {
     const [file, setFile] = useState(null);
+    const [buttonDisabled, setButtonDisabled] = useState(false);
   
     const handleChange = (file) => {
         setFile(file);
@@ -35,7 +36,7 @@ function DragDrop() {
             console.log('No file selected');
             return;
         }
-
+        setButtonDisabled(true); //Disable button after user clicks submit
         // read file content and send a POST request to the server using the read text
         const fileReader = new FileReader(); // fileReader to read from textfile
         fileReader.onload = async (e) => {
@@ -65,12 +66,12 @@ function DragDrop() {
                     console.log('Error storing prompt details');
                     showToastStoreFail();
                 }
-    
             } 
             catch (error) {
                 console.error('Error:', error);
                 showToastError(error);
             }
+            setButtonDisabled(false); //Re-enable button after submit request is handled
         };
         fileReader.readAsText(file);        // read the file as text
     };
@@ -87,9 +88,10 @@ function DragDrop() {
                 maxSize={5}
                 onDrop={(file) => console.log("File dropped:", file)}
             />
-            <button type="submit" className="submitButton" onClick={handleSubmit} style={{ marginTop: '10px' }}>
+            <button type="submit" className="submitButton" disabled={buttonDisabled} onClick={handleSubmit} style={{ marginTop: '10px' }}>
                 Submit
             </button>
+            <img src="/loading_ring.svg" alt="Spinner" className={buttonDisabled ? "w-10 h-10 inline mx-2" : "w-10 h-10 inline mx-2 invisible"}></img>
         </div>
     );
 }    
