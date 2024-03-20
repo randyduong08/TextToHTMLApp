@@ -76,8 +76,8 @@ function DragDrop() {
     };
 
     return (
-        <div style={{ marginTop: '10px' }}>
-            <h2 className="font-bold text-2xl">Input Text File</h2>
+        <div style={{ marginTop: '34px' }}>
+            <h2 className="font-bold text-2xl mb-2">Input Text File</h2>
             <FileUploader
                 handleChange={handleChange}
                 name="file"
@@ -87,7 +87,7 @@ function DragDrop() {
                 maxSize={5}
                 onDrop={(file) => console.log("File dropped:", file)}
             />
-            <button type="submit" className="submitButton" onClick={handleSubmit} style={{ marginTop: '15px' }}>
+            <button type="submit" className="submitButton" onClick={handleSubmit} style={{ marginTop: '10px' }}>
                 Submit
             </button>
         </div>
