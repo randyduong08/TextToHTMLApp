@@ -1,0 +1,49 @@
+{% comment %} 
+NOTE: This template does not incorporate any themes (ex. Sports, Gaming, News, Education) 
+    - Purple and dark-grey theme (Purple title, dark-grey text background, darker-grey background)
+    - Sleek title at the top-left
+    - Centered headers and text (All white)
+{% endcomment %}
+
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #111114;
+                text-align: center;
+            }
+            h1 {
+                color: #9155fc;
+                text-align: left;
+                padding-left: 20px;
+                font-size: 100px;
+            }
+            h2 {
+                color: #fefeff;
+                padding-left: 20px;
+                font-size: 50px;
+            }
+            p {
+                padding: 20px;
+                margin: 20px;
+                text-align: left;
+            }
+            .content {
+                margin: 0 auto;
+                background-color: #15171b;
+          		width: 70%;
+                font-family: Arial, sans-serif;
+                padding: 1px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> {{ title }} </h1>
+        <div class="content"> 
+            <h2> {{ header }} </h2>
+            {% for paragraph in paragraphs %}
+                <p> {{ paragraph }} </p>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,9 +1,12 @@
 // FileInput.js
+
 'use client'
+
 import './fileinput.css';
 import React, { useState } from "react";
 import { FileUploader } from "react-drag-drop-files";
 import { toast } from 'react-toastify'
+import { useHtmlContent } from '../../context/HtmlContentContext';
 
 const fileTypes = ["txt"]; // Only allow txt files
 
@@ -22,6 +25,8 @@ function DragDrop() {
         const stringData = '[' + data.join(']; [') + ']';
         toast.info('Tokens: \n' + stringData);
     }
+    
+    const { setHtmlContent } = useHtmlContent();    // get the setHtmlContent function from the context
 
     // function that handles submission from the html div defined below
     const handleSubmit = async (e) => {
@@ -46,10 +51,15 @@ function DragDrop() {
                 });
                 if (response.ok) {
                     const data = await response.json();
+                    const tokens_array = data.tokens_array;
+                    const html_content = data.html_content;
                     console.log('Prompt details stored successfully');
-                    console.log(data)
+                    console.log(tokens_array)
+                    console.log('File Text:', fileText);
                     showToastStoreSuccess();
-                    showToastData(data);
+                    showToastData(tokens_array);
+
+                    setHtmlContent(html_content);   // update the context with the generated html content
                 } 
                 else {
                     console.log('Error storing prompt details');
@@ -65,10 +75,9 @@ function DragDrop() {
         fileReader.readAsText(file);        // read the file as text
     };
 
-
     return (
-        <div style={{ marginTop: '10px' }}>
-            <h2 className="font-bold text-2xl">Input Text File</h2>
+        <div style={{ marginTop: '34px' }}>
+            <h2 className="font-bold text-2xl mb-2">Input Text File</h2>
             <FileUploader
                 handleChange={handleChange}
                 name="file"
@@ -78,7 +87,7 @@ function DragDrop() {
                 maxSize={5}
                 onDrop={(file) => console.log("File dropped:", file)}
             />
-            <button type="submit" className="submitButton" onClick={handleSubmit} style={{ marginTop: '15px' }}>
+            <button type="submit" className="submitButton" onClick={handleSubmit} style={{ marginTop: '10px' }}>
                 Submit
             </button>
         </div>

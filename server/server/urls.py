@@ -14,12 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path, include
 from serverapp.views import PromptView
+from serverapp.views import display_generated_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('prompts/', PromptView.as_view(), name='prompts'),
     path('api/auth/', include('authentication.urls')),
+    path('generated-page/', display_generated_page, name='display_generated_page'),
 ]

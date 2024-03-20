@@ -1,0 +1,42 @@
+{% comment %} 
+NOTE: This template incorporates an education theme
+    - Light-blue and white theme (Light-blue title, white text background, light-light-blue background)
+    - Sophisticated title at the top-left
+    - Centered headers and text
+{% endcomment %}
+
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #c2defc;
+                font-family: Georgia, serif;
+            }
+            h1 {
+                color: #1e90ff;
+                text-align: center;
+            }
+            .content {
+                background-color: white;
+                padding: 20px;
+                margin: 20px;
+                border-radius: 10px;
+            }
+            h2 {
+                text-align: center;
+            }
+            p {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> {{ title }} </h1>
+        <div class="content"> 
+            <h2> {{ header }} </h2>
+            {% for paragraph in paragraphs %}
+                <p> {{ paragraph }} </p>
+            {% endfor %}
+        </div>
+    </body>
+</html>
