@@ -65,6 +65,7 @@ export default function InputForm() {
                 />
                 <br />
                 <button type="submit" className="submitButton" disabled={buttonDisabled}>Submit</button>
+                <img src="/loading_ring.svg" alt="Spinner" className={buttonDisabled ? "w-10 h-10 inline mx-2" : "w-10 h-10 inline mx-2 invisible"}></img>
             </form>
         </div>
     )
