@@ -13,3 +13,11 @@ button.submitButton {
 button.submitButton:hover {
   background-color: #0056b3; /* Change background color on hover */
 }
+
+button:disabled,
+button[disabled]{
+  background-color: #999999;
+  color: #666666;
+  text-decoration: line-through;
+  cursor: not-allowed;
+}

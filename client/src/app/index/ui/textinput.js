@@ -10,6 +10,8 @@ import { useHtmlContent } from '../../context/HtmlContentContext';
 export default function InputForm() {
     // promptDetails = state variable; setPromptDetails = setter function, '' = initial value of prompt
     const [promptDetails, setPromptDetails] = useState('');
+    // buttonDisabled = state variable; setButtonDisabled = setter function, false = button is not disabled initially
+    const [buttonDisabled, setButtonDisabled] = useState(false);
 
     // define toast messages for user visibility
     const showToastStoreSuccess = (response) => toast.success('Prompt details stored successfully', response);
@@ -25,6 +27,7 @@ export default function InputForm() {
     // function that handles submission from the html form defined below
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setButtonDisabled(true); //Disable button after user clicks submit
         try {
             const response = await fetch('http://localhost:8000/prompts/', {
                 method: 'POST',
@@ -48,12 +51,12 @@ export default function InputForm() {
                 console.log('Error storing prompt details');
                 showToastStoreFail();
             }
-
         } 
         catch (error) {
             console.error('Error:', error);
             showToastError(error);
         }
+        setButtonDisabled(false); //Re-enable button after submit request is handled
     };
 
     return (
@@ -68,7 +71,8 @@ export default function InputForm() {
                     placeholder={"Enter description of website to generate.\nSeparate tokens with two new-line characters.\n\nExample:\n\nThis is the first portion of my website.\n\nThis is the second portion of my website.\n\nThis is the third portion of my website.\n\n..."}
                 />
                 <br />
-                <button type="submit" className="submitButton">Submit</button>
+                <button type="submit" className="submitButton" disabled={buttonDisabled}>Submit</button>
+                <img src="/loading_ring.svg" alt="Spinner" className={buttonDisabled ? "w-10 h-10 inline mx-2" : "w-10 h-10 inline mx-2 invisible"}></img>
             </form>
         </div>
     )
