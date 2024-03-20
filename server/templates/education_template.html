@@ -6,37 +6,58 @@ NOTE: This template incorporates an education theme
 {% endcomment %}
 
 <html>
-    <head>
-        <style>
-            body {
-                background-color: #c2defc;
-                font-family: Georgia, serif;
-            }
-            h1 {
-                color: #1e90ff;
-                text-align: center;
-            }
-            .content {
-                background-color: white;
-                padding: 20px;
-                margin: 20px;
-                border-radius: 10px;
-            }
-            h2 {
-                text-align: center;
-            }
-            p {
-                text-align: center;
-            }
-        </style>
-    </head>
-    <body>
-        <h1> {{ title }} </h1>
-        <div class="content"> 
-            <h2> {{ header }} </h2>
-            {% for paragraph in paragraphs %}
-                <p> {{ paragraph }} </p>
-            {% endfor %}
-        </div>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            background-color: #ffffff; /* White background for a clean look */
+            color: #333; /* Dark grey text for readability */
+            font-family: 'Georgia', serif; /* Sans-serif for a modern, accessible look */
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #e7f0fd; /* Light blue background for the header */
+            padding: 20px 0;
+            text-align: center;
+        }
+        .header h1 {
+            color: #1e90ff; /* Bright blue for the main title to stand out */
+            margin: 0;
+            font-size: 2em;
+        }
+        .content {
+            background-color: #ffffff; /* White background for the content area to stand out */
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px; /* Soft rounded corners */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            width: 90%; /* Adjust width as needed */
+            max-width: 800px; /* Maximum width for large screens */
+        }
+        .content h2 {
+            color: #1e90ff; /* Matching the title color for consistency */
+            text-align: center;
+        }
+        p {
+            font-size: 1em;
+            text-align: justify; /* Justified text for a more structured appearance */
+            line-height: 1.5; /* Enhanced readability */
+            color: #666; /* Slightly lighter text for easy reading */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ title }}</h1>
+    </div>
+    <div class="content">
+        <h2>{{ header }}</h2>
+        {% for paragraph in paragraphs %}
+            <p>{{ paragraph }}</p>
+        {% endfor %}
+    </div>
+</body>
 </html>
