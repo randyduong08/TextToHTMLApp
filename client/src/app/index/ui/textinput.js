@@ -16,8 +16,7 @@ export default function InputForm() {
     const showToastStoreFail = () => toast.error('Error storing prompt details');
     const showToastError = (error) => toast.error('Error: ' + error);
     const showToastData = (data) => {
-        //const stringData = '[' + data.join(']; [') + ']';
-        const stringData = data;
+        const stringData = '[' + data.join(']; [') + ']';
         toast.info('Tokens: \n' + stringData);
     }
 

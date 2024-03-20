@@ -7,7 +7,7 @@ import { useHtmlContent } from '../../context/HtmlContentContext';
 
 export default function Page() {
     const { htmlContent } = useHtmlContent();
-    const [iframeSrc, setIframeSrc] = useState('/sampleoutput.html');
+    const [iframeSrc, setIframeSrc] = useState('sampleoutput.html');
 
     useEffect(() => {
         if (htmlContent) {
