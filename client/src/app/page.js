@@ -1,10 +1,31 @@
-import Image from 'next/image'
-import Body from './index/bodylayout'
-import Header from './header/headerlayout'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+"use client"
+
+import Image from 'next/image';
+import Body from './index/bodylayout';
+import Header from './header/headerlayout';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
+import { useSession } from 'next-auth/react';
+
 
 export default function Home() {
+  const { session, status } = useSession();
+
+  console.log(status);
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      window.location.href = "/login";
+    }
+  }, [status]);
+
+  if (status !== "authenticated") {
+    return(
+      <div>Unauthorized or Loading...</div>
+    );
+  }
+
   return (
     <main className="main">
       <Body />

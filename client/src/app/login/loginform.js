@@ -3,7 +3,7 @@
 import './loginform.css';
 import Header from '../header/headerlayout';
 import { Checkbox } from "@/components/ui/checkbox"
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 export default function LoginForm() {
     return (
@@ -21,7 +21,7 @@ export default function LoginForm() {
                 <button 
                     className="button google flex items-center justify-center p-2 mt-5"
                     type="button"
-                    onClick={() => {signIn('google')}}
+                    onClick={() => {signIn('google', {callbackUrl: '/'});}}
                 >
                     <img src="Google Login Icon.png" alt="Google Login Icon" width="5%" height="5%" />
                     <span className="inline-block ml-2">Login with Google</span>
