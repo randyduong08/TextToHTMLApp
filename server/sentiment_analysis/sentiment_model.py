@@ -142,7 +142,7 @@ class SentimentModel():
 # function containing example of how you would get a sentiment for an inputted string
 def main() -> None:
     model = SentimentModel()
-    sentence = "THIS IS ASS!!!!! 😡"
+    sentence = "THIS IS BAD!!!!! 😡"
     
     inputs, masks = model.custom_tokenize(sentence)
     
