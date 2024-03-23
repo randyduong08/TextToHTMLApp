@@ -11,3 +11,5 @@ pre_trained/
 *.safetensors
 
 .env
+
+password.txt
